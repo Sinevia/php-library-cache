@@ -15,9 +15,16 @@ class Cache {
         array("UpdatedAt", "STRING", " DEFAULT NULL")
     );
 
-    public static function createTables() {
+    public static function tableCreate() {
         if (self::tableCache()->exists() == false) {
             return self::tableCache()->create(self::$tableCacheSchema);
+        }
+        return true;
+    }
+    
+    public static function tableDelete() {
+        if (self::tableCache()->exists() == true) {
+            return self::tableCache()->delete();
         }
         return true;
     }
