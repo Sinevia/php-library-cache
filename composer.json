@@ -1,0 +1,21 @@
+{
+    "name": "sinevia/php-library-sqldb-cache",
+    "description": "PHP Library Cache for SqlDb",
+    "type": "library",
+    "keywords": ["cache", "sqldb", "library", "php", "sinevia"],    
+    "homepage": "http://github.com/sinevia/php-library-sqldb-cache",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Milan Lesichkov",
+            "email": "lesichkovm@gmail.com",
+            "homepage": "http://lesichkov.co.uk",
+            "role": "Lead Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/Cache.php"
+        ]
+    }
+}
