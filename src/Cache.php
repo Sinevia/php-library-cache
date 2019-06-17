@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugins;
+namespace Sinevia;
 
 class Cache {
 
