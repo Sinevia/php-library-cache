@@ -34,11 +34,19 @@ class Cache {
     }
 
     public static function findCacheByKey($key) {
-        return self::tableCache()->where('Key', '=', $key)->selectOne();
+        $cache = self::tableCache()->where('Key', '=', $key)->selectOne();
+        if (is_null($cache)) {
+            return null;
+        }
+        return json_decode($cache['Value'], true);
     }
 
-    public static function findCacheById($key) {
-        return self::tableCache()->where('Id', '=', $key)->selectOne();
+    public static function findCacheById($id) {
+        $cache = self::tableCache()->where('Id', '=', $id)->selectOne();
+        if (is_null($cache)) {
+            return null;
+        }
+        return json_decode($cache['Value'], true);
     }
 
     public static function createOrUpdateCache($key, $value, $expiresAt = '+1 day') {
